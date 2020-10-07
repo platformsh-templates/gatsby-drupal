@@ -4,6 +4,10 @@ name: 'gatsby'
 # The type key specifies the language and version for your application.
 type: 'nodejs:14'
 
+# variables:
+#     env:
+#         NODE_OPTIONS: --max_old_space_size=1536
+
 relationships:
     drupal: 'drupal:http'
 
@@ -23,7 +27,7 @@ web:
     commands:
         start: |
             if [ "$PLATFORM_BRANCH" = master ]; then
-               npm run serve 
+               npm run serve -- -p $PORT
             # Run development server on non-production environments.
             else
                npm run develop
