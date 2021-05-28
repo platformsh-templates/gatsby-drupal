@@ -17,3 +17,10 @@
 "https://www.backend.{default}/":
     type: redirect
     to: "https://backend.{default}/"
+
+# Disable cache for admin pages to make password reset work
+https://backend.{default}/wp-admin/:
+    type: upstream
+    upstream: "drupal:http"
+    cache:
+        enabled: false
