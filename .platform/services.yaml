@@ -9,3 +9,7 @@ db:
 
 cache:
     type: redis:5.0
+
+#elasticsearch:
+#    type: elasticsearch:7.2
+#    disk: 1024

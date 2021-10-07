@@ -22,6 +22,7 @@ dependencies:
 relationships:
     database: 'db:mysql'
     redis: 'cache:redis'
+#    search: 'elasticsearch:elasticsearch'
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
