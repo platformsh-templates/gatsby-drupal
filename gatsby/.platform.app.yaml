@@ -25,12 +25,6 @@ disk: 1024
 web:
     commands:
         start: |
-#            if [ "$PLATFORM_BRANCH" = master ]; then
-#               npm run serve -- -p $PORT
-#            # Run development server on non-production environments.
-#            else
-#               npm run develop
-#            fi
                npm run serve -- -p $PORT
 
 mounts:
