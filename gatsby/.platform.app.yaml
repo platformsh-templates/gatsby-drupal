@@ -23,6 +23,8 @@ relationships:
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
+    build: |
+        yarn set version berry
     # Gatsby's build is delayed to the post_deploy hook, when Drupal is available for requests.
     post_deploy: |
         yarn build
