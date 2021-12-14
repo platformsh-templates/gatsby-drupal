@@ -8731,7 +8731,7 @@ moment@^2.27.0:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
-mozjpeg@7.1.0:
+mozjpeg@7.1.0, mozjpeg@^7.0.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-7.1.0.tgz#23f202f3e48e98f02ed84f415358d4cbfab66c19"
   integrity sha512-A6nVpI33DVi04HxatRx3PZTeVAOP1AC/T/5kXEvP0U8F+J11mmFFDv46BM2j5/cEyzDDtK8ptHeBSphNMrQLqA==
@@ -8739,14 +8739,6 @@ mozjpeg@7.1.0:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.0"
     logalot "^2.1.0"
-
-mozjpeg@^7.0.0:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-7.1.1.tgz#dfb61953536e66fcabd4ae795e7a312d42a51f18"
-  integrity sha512-iIDxWvzhWvLC9mcRJ1uSkiKaj4drF58oCqK2bITm5c2Jt6cJ8qQjSSru2PCaysG+hLIinryj8mgz5ZJzOYTv1A==
-  dependencies:
-    bin-build "^3.0.0"
-    bin-wrapper "^4.0.0"
 
 mri@^1.1.0:
   version "1.2.0"
