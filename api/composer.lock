@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14ecd84e203058602b192c63df6d8526",
+    "content-hash": "4b4e97f2d93dca98a3fb5f0f71fa3d19",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1701,79 +1701,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
-            }
-        },
-        {
-            "name": "drupal/gatsby",
-            "version": "2.0.0-rc1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/gatsby.git",
-                "reference": "2.0.0-rc1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gatsby-2.0.0-rc1.zip",
-                "reference": "2.0.0-rc1",
-                "shasum": "d5a8a001a00e17942b995a127303a2c832a1b52b"
-            },
-            "require": {
-                "drupal/core": "^9",
-                "drupal/jsonapi_extras": "^3"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-rc1",
-                    "datestamp": "1646336978",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "DamienMcKenna",
-                    "homepage": "https://www.drupal.org/user/108450"
-                },
-                {
-                    "name": "codekarate",
-                    "homepage": "https://www.drupal.org/user/506260"
-                },
-                {
-                    "name": "drupalninja99",
-                    "homepage": "https://www.drupal.org/user/42248"
-                },
-                {
-                    "name": "iansholtys",
-                    "homepage": "https://www.drupal.org/user/3108171"
-                },
-                {
-                    "name": "johnnybgoode",
-                    "homepage": "https://www.drupal.org/user/980926"
-                },
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
-                },
-                {
-                    "name": "mrjmd",
-                    "homepage": "https://www.drupal.org/user/1800446"
-                }
-            ],
-            "description": "Enables Live Preview for Gatsby",
-            "homepage": "https://www.drupal.org/project/gatsby",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/gatsby",
-                "issues": "https://www.drupal.org/project/issues/gatsby"
             }
         },
         {
@@ -6785,9 +6712,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "drupal/gatsby": 5
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
