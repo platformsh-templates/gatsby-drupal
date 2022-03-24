@@ -1,13 +1,13 @@
-https://{default}/:
-  type: upstream
-  upstream: "drupal:http"
-  id: "first"
-  cache:
-    enabled: true
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/']
-https://www.{default}/:
-  type: redirect
-  to: "https://{default}/"
+# https://{default}/:
+#   type: upstream
+#   upstream: "drupal:http"
+#   id: "first"
+#   cache:
+#     enabled: true
+#     cookies: ['/^SS?ESS/', '/^Drupal.visitor/']
+# https://www.{default}/:
+#   type: redirect
+#   to: "https://{default}/"
 
 https://api.{default}/:
   type: upstream
