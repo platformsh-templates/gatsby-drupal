@@ -19,8 +19,6 @@
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
-        "drupal/jsonapi_extras": "^3.20",
-        "drupal/pathauto": "^1.9",
         "drupal/redis": "^1.5",
         "drush/drush": "^11.0",
         "platformsh/config-reader": "^2.4"

@@ -94,6 +94,7 @@ php ./drush/platformsh_generate_drush_yml.php
 # fi
 ########################################################################################################################
 # d. Drupal tasks: performed on every deployment.
+cd web
 drush -q -y cache-rebuild
 drush -q -y updatedb
 drush -q -y config-import
