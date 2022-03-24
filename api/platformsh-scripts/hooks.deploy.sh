@@ -61,8 +61,8 @@ php ./drush/platformsh_generate_drush_yml.php
 #     printf "    ✔ Rebuilding the cache.\n"
 #     drush -q -y cr
 # fi
-########################################################################################################################
-# c. Environment configuration: performed during the first push on a new environment.
+# ########################################################################################################################
+# # c. Environment configuration: performed during the first push on a new environment.
 # if [ -f "$ENV_SETTINGS" ]; then
 
 #     printf "* Configuring the environment.\n"
@@ -94,7 +94,6 @@ php ./drush/platformsh_generate_drush_yml.php
 # fi
 ########################################################################################################################
 # d. Drupal tasks: performed on every deployment.
-cd web
 drush -q -y cache-rebuild
 drush -q -y updatedb
 drush -q -y config-import

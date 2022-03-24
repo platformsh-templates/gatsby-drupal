@@ -22,6 +22,19 @@ if ($platformsh->hasRelationship('database')) {
   ];
 }
 
+// Enable verbose error messages on development branches, but not on the production branch.
+// You may add more debug-centric settings here if desired to have them automatically enable
+// on development but not production.
+if (isset($platformsh->branch)) {
+  // Production type environment.
+  if ($platformsh->branch == 'master' || $platformsh->onDedicated()) {
+    $config['system.logging']['error_level'] = 'hide';
+  } // Development type environment.
+  else {
+    $config['system.logging']['error_level'] = 'verbose';
+  }
+}
+
 // Enable Redis caching.
 if ($platformsh->hasRelationship('redis') && !InstallerKernel::installationAttempted() && extension_loaded('redis') && class_exists('Drupal\redis\ClientFactory')) {
   $redis = $platformsh->credentials('redis');
@@ -85,7 +98,7 @@ if ($platformsh->inRuntime()) {
     $settings['file_temp_path'] = $platformsh->appDir . '/tmp';
   }
 
-  // Configure the default PhpStorage and Twig template cache directories.
+// Configure the default PhpStorage and Twig template cache directories.
   if (!isset($settings['php_storage']['default'])) {
     $settings['php_storage']['default']['directory'] = $settings['file_private_path'];
   }
@@ -109,8 +122,8 @@ if ($platformsh->inRuntime()) {
 // Host headers, as the only possible Host header is already guaranteed safe.
 $settings['trusted_host_patterns'] = ['.*'];
 
-// Import variables prefixed with 'd8settings:' into $settings
-// and 'd8config:' into $config.
+// Import variables prefixed with 'drupalsettings:' into $settings
+// and 'drupalconfig:' into $config.
 foreach ($platformsh->variables() as $name => $value) {
   $parts = explode(':', $name);
   list($prefix, $key) = array_pad($parts, 3, null);
@@ -119,7 +132,7 @@ foreach ($platformsh->variables() as $name => $value) {
     // to the $settings array verbatim, even if the value is an array.
     // For example, a variable named d8settings:example-setting' with
     // value 'foo' becomes $settings['example-setting'] = 'foo';
-    case 'd8settings':
+    case 'drupalsettings':
     case 'drupal':
       $settings[$key] = $value;
       break;
@@ -135,7 +148,7 @@ foreach ($platformsh->variables() as $name => $value) {
     // Example: Variable `d8config:conf_file:prop:subprop` with value ['foo' => 'bar'] becomes
     // $config['conf_file']['prop']['subprop']['foo'] = 'bar';
     // Example: Variable `d8config:prop` is ignored.
-    case 'd8config':
+    case 'drupalconfig':
       if (count($parts) > 2) {
         $temp = &$config[$key];
         foreach (array_slice($parts, 2) as $n) {

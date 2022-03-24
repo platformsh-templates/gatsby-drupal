@@ -1,15 +1,15 @@
 <?php
 /**
  * @file
- * Platform.sh example settings.php file for Drupal 8.
+ * Platform.sh example settings.php file for Drupal 9.
  */
 
-// Default Drupal 8 settings.
+// Default Drupal settings.
 //
 // These are already explained with detailed comments in Drupal's
 // default.settings.php file.
 //
-// See https://api.drupal.org/api/drupal/sites!default!default.settings.php/8
+// See https://api.drupal.org/api/drupal/sites!default!default.settings.php/9
 $databases = [];
 $config_directories = [];
 $settings['update_free_access'] = FALSE;
@@ -40,4 +40,10 @@ if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
 // Local settings. These come last so that they can override anything.
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
+}
+
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+  require $ddev_settings;
 }
