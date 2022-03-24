@@ -4,8 +4,10 @@
             "installed": false
         },
         "modules": [
-            "next",
-            "next_jsonapi"
+            "gatsby",
+            "gatsby_fastbuilds",
+            "gatsby_instantpreview",
+            "pathauto"
         ],
         "consumer": {
             "role": {

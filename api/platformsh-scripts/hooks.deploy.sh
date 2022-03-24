@@ -48,14 +48,14 @@ else
     # 1. Install Drupal with default profile + creds.
     $DRUPAL_SETUP/project/01-install-drupal.sh
 
-    # # 2. Enable modules.
-    # $DRUPAL_SETUP/project/02-enable-modules.sh
+    # 2. Enable modules.
+    $DRUPAL_SETUP/project/02-enable-modules.sh
 
     # # 3. Create role and user.
     # $DRUPAL_SETUP/project/03-create-role-and-user.sh
 
-    # # 4. Configure content.
-    # $DRUPAL_SETUP/project/04-configure-content.sh
+    # 4. Configure content.
+    $DRUPAL_SETUP/project/04-configure-content.sh
 
     # 5. Rebuild the cache.
     printf "    ✔ Rebuilding the cache.\n"
