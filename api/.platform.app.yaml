@@ -25,7 +25,7 @@ hooks:
       path: platformsh-scripts/hooks.deploy.sh
 
 relationships:
-  database: 'db:mysql'
+  database: 'dbb:mysql'
   redis: 'cache:redis'
 
 disk: 2048

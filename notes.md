@@ -11,6 +11,7 @@
     </a>
 </p> 
 
+
 1. `composer create-project drupal/recommended-project api -y`
 1. `composer require drupal/redis drush/drush platformsh/config-reader drupal/jsonapi_extras drupal/pathauto 'drupal/gatsby:^2.0@RC'`
 1. move over template files.
