@@ -1,11 +1,11 @@
-name: 'drupalb'
+name: 'drupal'
 
 type: 'php:8.1'
 
-variables:
-  env: 
-    CREATE_DEMO_NODES: true
-    CREATE_PATHAUTO_ALIASES: true
+# variables:
+#   env: 
+#     CREATE_DEMO_NODES: true
+#     CREATE_PATHAUTO_ALIASES: true
 
 dependencies:
   php:
@@ -25,8 +25,8 @@ hooks:
       path: platformsh-scripts/hooks.deploy.sh
 
 relationships:
-  database: 'dbb:mysql'
-  redis: 'cacheb:redis'
+  database: 'db:mysql'
+  redis: 'cache:redis'
 
 disk: 2048
 
@@ -51,7 +51,7 @@ mounts:
     source_path: 'console'
   deploy:
     source: service
-    service: filesb
+    service: files
     source_path: deploy
 
 web:
