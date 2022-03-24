@@ -1,4 +1,4 @@
-name: 'drupal'
+name: 'drupalb'
 
 type: 'php:8.1'
 
@@ -25,8 +25,8 @@ hooks:
       path: platformsh-scripts/hooks.deploy.sh
 
 relationships:
-  database: 'db:mysql'
-  redis: 'cache:redis'
+  database: 'dbb:mysql'
+  redis: 'cacheb:redis'
 
 disk: 2048
 
@@ -51,7 +51,7 @@ mounts:
     source_path: 'console'
   deploy:
     source: service
-    service: files
+    service: filesb
     source_path: deploy
 
 web:

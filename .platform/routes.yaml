@@ -1,6 +1,6 @@
 https://api.{default}/:
   type: upstream
-  upstream: "drupal:http"
+  upstream: "drupalb:http"
   id: "api"
   cache:
     enabled: true
