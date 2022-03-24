@@ -37,30 +37,30 @@
 php ./drush/platformsh_generate_drush_yml.php
 ########################################################################################################################
 # b. Project installation: only performed during first deployment on a new project.
-# if [ -f "$ENV_SETTINGS" ]; then
-#     printf "\n* Project already installed. Skipping installation.\n"
-# else
-#     printf "\n* Fresh project detected.\n"
-#     # 0. Track the installation in a writable file, making note of the current environment before anything else. (See NOTE).
-#     UPDATED_DATA=$(jq --arg PLATFORM_BRANCH "$PLATFORM_BRANCH" '.environment.branch = $PLATFORM_BRANCH' $INITIAL_DEMO_SETTINGS)
-#     echo $UPDATED_DATA > $ENV_SETTINGS
+if [ -f "$ENV_SETTINGS" ]; then
+    printf "\n* Project already installed. Skipping installation.\n"
+else
+    printf "\n* Fresh project detected.\n"
+    # 0. Track the installation in a writable file, making note of the current environment before anything else. (See NOTE).
+    UPDATED_DATA=$(jq --arg PLATFORM_BRANCH "$PLATFORM_BRANCH" '.environment.branch = $PLATFORM_BRANCH' $INITIAL_DEMO_SETTINGS)
+    echo $UPDATED_DATA > $ENV_SETTINGS
 
-#     # 1. Install Drupal with default profile + creds.
-#     $DRUPAL_SETUP/project/01-install-drupal.sh
+    # 1. Install Drupal with default profile + creds.
+    $DRUPAL_SETUP/project/01-install-drupal.sh
 
-#     # 2. Enable modules.
-#     $DRUPAL_SETUP/project/02-enable-modules.sh
+    # # 2. Enable modules.
+    # $DRUPAL_SETUP/project/02-enable-modules.sh
 
-#     # 3. Create role and user.
-#     $DRUPAL_SETUP/project/03-create-role-and-user.sh
+    # # 3. Create role and user.
+    # $DRUPAL_SETUP/project/03-create-role-and-user.sh
 
-#     # 4. Configure content.
-#     $DRUPAL_SETUP/project/04-configure-content.sh
+    # # 4. Configure content.
+    # $DRUPAL_SETUP/project/04-configure-content.sh
 
-#     # 5. Rebuild the cache.
-#     printf "    ✔ Rebuilding the cache.\n"
-#     drush -q -y cr
-# fi
+    # 5. Rebuild the cache.
+    printf "    ✔ Rebuilding the cache.\n"
+    drush -q -y cr
+fi
 # ########################################################################################################################
 # # c. Environment configuration: performed during the first push on a new environment.
 # if [ -f "$ENV_SETTINGS" ]; then

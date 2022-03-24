@@ -20,7 +20,7 @@
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
-        "drupal/next": "^1.0",
+        "drupal/gatsby": "^2.0@RC",
         "drupal/redis": "^1.5",
         "drush/drush": "^11.0",
         "platformsh/config-reader": "^2.4"
