@@ -14,23 +14,22 @@ resources:
     base_memory: 1024
     memory_ratio: 1024
 
+dependencies:
+    nodejs:
+        # yarn: "1.22.17"
+        pm2: "5.2.0"
+
 hooks:
     post_deploy: |
         # Verify the connection to the backend can be made with those variables.
         # . $GENERATED_VARS
-        # cd platformsh-scripts/test/next-drupal-debug && yarn debug
-
+        # Gatsby clean on a RO-filesystem
         rm -rf .cache/* && rm -rf public/*
         npm run build -- --no-color
-        # cd $PLATFORM_APP_DIR && yarn build
 
 web:
     commands:
         start: |
-            # Gatsby clean on a RO-filesystem
-            # rm -rf .cache/* && rm -rf public/*
-            # npm run build -- --no-color
-
             # npm run serve -- -p $PORT --no-color
 
             APP=$(cat package.json | jq -r '.name')
