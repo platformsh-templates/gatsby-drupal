@@ -12,6 +12,7 @@ https://www.api.{default}/:
 "https://www.{default}/":
     type: upstream
     upstream: "gatsby:http"
+    primary: true
 
 "https://{default}/":
     type: redirect
