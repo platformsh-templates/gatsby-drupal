@@ -51,8 +51,8 @@ else
     # 2. Enable modules.
     $DRUPAL_SETUP/project/02-enable-modules.sh
 
-    # # 3. Create role and user.
-    # $DRUPAL_SETUP/project/03-create-role-and-user.sh
+    # 3. Create role and user.
+    $DRUPAL_SETUP/project/03-create-role-and-user.sh
 
     # 4. Configure content.
     $DRUPAL_SETUP/project/04-configure-content.sh

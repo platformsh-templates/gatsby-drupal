@@ -44,22 +44,23 @@ resources:
 web:
     commands:
         start: |
-            npm run clean
+            # Gatsby clean on a RO-filesystem
+            rm -rf .cache/* && rm -rf public/*
             npm run build
             npm run serve
             # Maybe since we're foregoing the first deploy, yarn start is good enough.
-            if [ -f "$GENERATED_VARS" ]; then
-                # Source environment variables, build the frontend, and start the server.
-                # . $GENERATED_VARS
-                npm run clean
-                npm run build
-                npm run serve
-                # APP=$(cat package.json | jq -r '.name')
-                # pm2 start npm --no-daemon --watch --name $APP -- preview -- -p $PORT
-            else
-                # On the first deploy, display next steps page.
-                node first_deploy.js
-            fi
+            # if [ -f "$GENERATED_VARS" ]; then
+            #     # Source environment variables, build the frontend, and start the server.
+            #     # . $GENERATED_VARS
+            #     npm run clean
+            #     npm run build
+            #     npm run serve
+            #     # APP=$(cat package.json | jq -r '.name')
+            #     # pm2 start npm --no-daemon --watch --name $APP -- preview -- -p $PORT
+            # else
+            #     # On the first deploy, display next steps page.
+            #     node first_deploy.js
+            # fi
 
 
 disk: 512

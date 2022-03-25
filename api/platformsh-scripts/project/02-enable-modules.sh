@@ -25,6 +25,8 @@ drush -q pm:enable $MODULES -y
 drush -q config:set jsonapi_extras.settings include_count true -y
 # Gatsby
 drush -q config:set --input-format=yaml gatsby.settings supported_entity_types [node]
+
+# These have to be updated on every new environment.
 drush -q config:set gatsby.settings server_url https://pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site -y
 drush -q config:set gatsby.settings preview_callback_url https://pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site/__refresh -y  
 # Figure out how to trigger incremental builds, and use localhost:8000 for the above setting.
