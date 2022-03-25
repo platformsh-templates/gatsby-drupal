@@ -47,7 +47,7 @@ web:
             # Gatsby clean on a RO-filesystem
             rm -rf .cache/* && rm -rf public/*
             npm run build
-            npm run serve
+            npm run serve -- -p $PORT
             # Maybe since we're foregoing the first deploy, yarn start is good enough.
             # if [ -f "$GENERATED_VARS" ]; then
             #     # Source environment variables, build the frontend, and start the server.
