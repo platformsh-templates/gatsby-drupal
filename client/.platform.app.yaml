@@ -33,7 +33,7 @@ web:
             # npm run serve -- -p $PORT --no-color
 
             APP=$(cat package.json | jq -r '.name')
-            pm2 start npm --no-daemon --watch --name $APP -- serve -- -p $PORT --no-color
+            pm2 start npm --no-daemon --watch --name $APP -- run serve -- -p $PORT --no-color
 
 
 
