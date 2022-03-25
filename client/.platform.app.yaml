@@ -61,6 +61,9 @@ mounts:
     /.config:
         source: local
         source_path: 'config'
+    /.pm2:
+        source: local
+        source_path: 'pm2'
     public:
         source: local
         source_path: 'public'
