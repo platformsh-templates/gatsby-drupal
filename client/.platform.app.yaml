@@ -22,7 +22,7 @@ resources:
     base_memory: 1024
     memory_ratio: 1024
 
-hooks:
+# hooks:
     # build: |
     #     # Build dependencies.
     #     set -e

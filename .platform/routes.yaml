@@ -9,10 +9,10 @@ https://www.api.{default}/:
   type: redirect
   to: "https://api.{default}/"
 
-# "https://www.{default}/":
-#     type: upstream
-#     upstream: "gatsby:http"
+"https://www.{default}/":
+    type: upstream
+    upstream: "gatsby:http"
 
-# "https://{default}/":
-#     type: redirect
-#     to: "https://www.{default}/"
+"https://{default}/":
+    type: redirect
+    to: "https://www.{default}/"
