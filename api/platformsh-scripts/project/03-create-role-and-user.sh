@@ -5,6 +5,9 @@
 # An OAuth consumer will be configured to access preview routes, which requires a user and role for those scopes to be
 #   created first. Steps are outlined in https://next-drupal.org/learn/quick-start/create-role.
 #
+# https://www.gatsbyjs.com/plugins/gatsby-source-drupal/#fastbuilds - This will require authentication to your Drupal 
+# site and a Drupal user with the Drupal permission to sync gatsby fastbuild log entities.
+#
 ########################################################################################################################
 # 1. Create role for the OAuth consumer.
 printf "    ✔ Creating role (see https://next-drupal.org/learn/quick-start/create-role).\n"
@@ -30,6 +33,7 @@ USER_ID=$(cat $ENV_SETTINGS | jq -r '.project.consumer.user.id')
 printf "    ✔ Creating user (see https://next-drupal.org/learn/quick-start/create-role).\n"
 printf "        * id: $USER_ID\n"
 drush -q user:create "$USER_ID"
+drush -q user:password "$USER_ID" "$PLATFORM_PROJECT_ENTROPY"
 
 # 4. Grant permissions to the user.
 printf "    ✔ Granting role permissions to user (see https://next-drupal.org/learn/quick-start/create-role)\n"

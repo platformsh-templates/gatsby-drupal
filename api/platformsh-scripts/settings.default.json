@@ -14,9 +14,8 @@
                 "id": "oauth_consumer_role",
                 "label": "OAuth Consumer Role",
                 "permissions": [
-                    "bypass node access",
-                    "issue subrequests",
-                    "access user profiles"
+                    "sync gatsby fastbuild log entities",
+                    "sync gatsby fastbuild preview log entities"
                 ]
             },
             "user": {

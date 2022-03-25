@@ -19,3 +19,15 @@ done
 
 # 2. Enable them.
 drush -q pm:enable $MODULES -y
+
+# 3. Configure Gatsby w/ Recommended settings.
+# JSON API
+drush -q config:set jsonapi_extras.settings include_count true -y
+# Gatsby
+drush -q config:set --input-format=yaml gatsby.settings supported_entity_types [node]
+drush -q config:set gatsby.settings server_url https://pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site -y
+drush -q config:set gatsby.settings preview_callback_url https://pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site/__refresh -y  
+# Figure out how to trigger incremental builds, and use localhost:8000 for the above setting.
+drush -q config:set gatsby.settings preview_target https://pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site -y
+drush -q config:set gatsby.settings incrementalbuild_url https://pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site/__refresh -y
+drush -q config:set gatsby.settings contentsync_url https://pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site/__refresh -y
