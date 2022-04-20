@@ -4,7 +4,7 @@
 # necessarily the git repository's root. In case of multiple applications,
 # each application can have its own .environment file.
 
-if [ "$PLATFORM_BRANCH" != "master" ] ; then
+if [ "$PLATFORM_ENVIRONMENT_TYPE" != "production" ] ; then
     export ENABLE_GATSBY_REFRESH_ENDPOINT=true
     echo "Non-production environment: Enabling Live Preview endpoint..."
 else
