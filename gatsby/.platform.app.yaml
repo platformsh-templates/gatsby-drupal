@@ -34,7 +34,7 @@ disk: 1024
 web:
     commands:
         start: |
-            if [ "$PLATFORM_BRANCH" = master ]; then
+            if [ "$PLATFORM_ENVIRONMENT_TYPE" = "production" ]; then
                yarn run serve -- -p $PORT
             # Run development server on non-production environments.
             else
