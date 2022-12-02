@@ -6,7 +6,7 @@
 </a>
 </p>
 
-This template builds a two-application project to deploy the Headless CMS pattern using Gatsby as its frontend and Drupal for its backend.. The `gatsby-source-drupal` source plugin is used to pull data from Drupal during the `post_deploy` hook into the Gatsby Data Layer and build the frontend site. Gatsby utilizes the Platform.sh Configuration Reader library for Node.js to define the backend data source in its configuration. It is intended for you to use as a starting point and modify for your own needs.
+This template builds a two-application project to deploy the Headless CMS pattern using Gatsby as its frontend and Drupal for its backend. The `gatsby-source-drupal` source plugin is used to pull data from Drupal during the `post_deploy` hook into the Gatsby Data Layer and build the frontend site. Gatsby utilizes the Platform.sh Configuration Reader library for Node.js to define the backend data source in its configuration. It is intended for you to use as a starting point and modify for your own needs.
 
 Note that after you have completed the Drupal installation and included a few articles, the project will require a redeploy to build and deploy Gatsby for the first time. See the included README's post-install section for details.
 
@@ -50,7 +50,7 @@ Gatsby is a free and open source framework based on React that helps developers 
 
 ### Enabling Gatsby Live Preview (manual configuration)
 
-Live Preview is not enabled by default on *Master* environments, but it can be set up manually on your development environments. After Live Preview is enabled, you will be able to edit content within Drupal, which will cause that content to update on Gatsby automatically for changes to its title, summary and body. Make sure to have at least two articles in Drupal before attempting to update an article's image. Gatsby temporarily is not able to locate the article during the update, and the environment will have to be redeployed. As long as there is more than one article present, this problem will not be encountered.
+Live Preview is not enabled by default on *Master* environments, but it can be set up manually on your development environments. After Live Preview is enabled, you will be able to edit content within Drupal, which will cause that content to update on Gatsby automatically for changes to its title, summary and body. Make sure to have at least two articles in Drupal before attempting to update an article's image. Gatsby temporarily is not able to locate the article during the update, and the environment will have to be redeployed. As long as there is more than one article present, this problem will not be encountered.  
 
 0. Branch off of master a new development environment.
 1. Within the Drupal admin on that development envirnonment, click on *Gatsby Settings* in **Configuration**/**Web Services** section.
