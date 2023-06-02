@@ -12,7 +12,7 @@ let backendURL;
 let routes = decode(process.env.PLATFORM_ROUTES);
 for (route in routes) {
     if (routes[route]['id'] == 'api') {
-       backendURL = route;
+        backendURL = route;
     }
 }
 
@@ -345,7 +345,7 @@ const outputString = `
                         <p>When you deployed this template, a few things happend.</p>
                         <p>Drupal was fully installed, all of the necessary modules and settings were configured to communicate with the Gatsby frontend, and connection credentials were shared with that frontend application.</p>
                         <p>Now that that's completed, there are only two steps you'll need to take to complete the demo.</p>
-                        <p>If anything seems unclear, be sure to check out the <a href="https://github.com/platformsh-templates/nextjs-drupal" target="_blank" rel="noopener noreferrer">README</a> for more details.
+                        <p>If anything seems unclear, be sure to check out the <a href="https://github.com/platformsh-templates/gatsby-drupal" target="_blank" rel="noopener noreferrer">README</a> for more details.
                     
                         </div>
                     <div class="content-colb">
@@ -376,12 +376,12 @@ const outputString = `
 `;
 
 const server = http.createServer(async function(_request, response) {
-  
+
     response.writeHead(200, { "Content-Type": "text/html" });
     response.end(outputString);
-  });
-  
-  // Get PORT and start the server
-  server.listen(process.env.PORT, function() {
+});
+
+// Get PORT and start the server
+server.listen(process.env.PORT, function() {
     console.log(`Listening on port ${process.env.PORT}`);
 });

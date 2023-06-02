@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 ########################################################################################################################
 # NOTE:
-# 
+#
 # This script actually creates the OAuth consumer that will be used for the current environment.
 #
 ########################################################################################################################
 # 1. Generate keys, and update simple oauth settings.
 KEY_LOCATION=$(cat $ENV_SETTINGS | jq -r '.environment.key_path')
-printf "    ✔ Generating keys (see https://next-drupal.org/learn/quick-start/create-consumer).\n"
+printf "    ✔ Generating keys.\n"
 printf "        * location: $KEY_LOCATION\n"
 printf "        * public_key: $KEY_LOCATION/public.key\n"
 printf "        * private_key: $KEY_LOCATION/private.key\n"
@@ -17,7 +17,7 @@ drush -q config:set simple_oauth.settings private_key $KEY_LOCATION/private.key 
 
 # 2. Create the OAuth consumer.
 #   a. Get values from environment settings file.
-printf "    ✔ Creating the OAuth consumer for the current environment (see https://next-drupal.org/learn/quick-start/create-consumer).\n"
+printf "    ✔ Creating the OAuth consumer for the current environment.\n"
 CONSUMER_USER_UID=$(cat $ENV_SETTINGS | jq -r '.project.consumer.user.uid')
 printf "        * user_uid: $CONSUMER_USER_UID\n"
 CONSUMER_ID=$(cat $ENV_SETTINGS | jq -r '.environment.consumer.id')
