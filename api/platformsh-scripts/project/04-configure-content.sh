@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 ########################################################################################################################
 # NOTE:
-# 
+#
 # Like most decoupled Drupal implementations, this demo relies on pathauto to define a pattern every newly created node
 #   will follow when generating path aliases. This script sets up that pattern, and also generates dummy content.
-# 
+#
 # In both cases, small Drush scripts have been written that are called.
 #
 ########################################################################################################################
 
 # 1. Setup pathauto aliases.
-if [ -z ${CREATE_PATHAUTO_ALIASES+x} ]; then 
+if [ -z ${CREATE_PATHAUTO_ALIASES+x} ]; then
     printf "    ✔ Skipping node alias pathauto configuration.\n"
-else 
+else
     if [[ "$CREATE_PATHAUTO_ALIASES" == true ]]; then
-        printf "    ✔ Defining node aliases via pathauto (see https://next-drupal.org/learn/quick-start/configure-content-types).\n"
+        printf "    ✔ Defining node aliases via pathauto.\n"
         TYPE=$(cat $ENV_SETTINGS | jq -r '.project.nodes.pathauto.type')
         BUNDLE=$(cat $ENV_SETTINGS | jq -r '.project.nodes.pathauto.bundle')
         LABEL=$(cat $ENV_SETTINGS | jq -r '.project.nodes.pathauto.label')
@@ -30,11 +30,11 @@ else
 fi
 
 # 2. Create some dummy content.
-if [ -z ${CREATE_DEMO_NODES+x} ]; then 
+if [ -z ${CREATE_DEMO_NODES+x} ]; then
     printf "    ✔ Skipping content generation.\n"
-else 
+else
     if [[ "$CREATE_DEMO_NODES" == true ]]; then
-        printf "    ✔ Generating demo article nodes (see https://next-drupal.org/learn/quick-start/create-content).\n"
+        printf "    ✔ Generating demo article nodes.\n"
         NUM_NODES=$(cat $ENV_SETTINGS | jq -r '.project.nodes.demo.num_nodes')
         NODE_DATA=$(cat $ENV_SETTINGS | jq -r '.project.nodes.demo.data')
         printf "        * data: $NODE_DATA\n"
@@ -46,7 +46,7 @@ else
     fi
 fi
 
-# 3. Next-Drupal recommends updating the theme for a cleaner preview experience.
+# 3. Drupal recommends updating the theme for a cleaner preview experience.
 printf "    ✔ Updating default theme.\n"
 drush -q theme:enable claro
 drush -q config:set system.theme default claro -y

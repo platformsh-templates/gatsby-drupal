@@ -1,3 +1,4 @@
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby + Drupal on Platform.sh`,
@@ -52,15 +53,15 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://api.pr-15-jheso3q-rurwlw7e4kjz2.eu-2.platformsh.site`,
+        baseUrl: process.env.PUBLIC_DRUPAL_BASE_URL,
         // apiBase: `api`, // optional, defaults to `jsonapi`
         // secret: process.env.PREVIEW_SECRET,
-        basicAuth: {
-          // username: process.env.BASIC_AUTH_USERNAME,
-          // password: process.env.BASIC_AUTH_PASSWORD,
-          username: `oauth_consumer_user`,
-          password: `7R4XB7NSNW5NKSOWJDVPCQGJDC4KYZJJ7J5SIHDWK5PDTXUQSLLA====`,
-        },
+        // basicAuth: {
+        //   // username: process.env.BASIC_AUTH_USERNAME,
+        //   // password: process.env.BASIC_AUTH_PASSWORD,
+        //   username: process.env.DRUPAL_CLIENT_ID,
+        //   password: process.env.DRUPAL_CLIENT_SECRET,
+        // },
         fastBuilds: true,
       },
     },

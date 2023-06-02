@@ -22,7 +22,12 @@ dependencies:
 hooks:
     post_deploy: |
         # Verify the connection to the backend can be made with those variables.
-        # . $GENERATED_VARS
+        if [ -f "$GENERATED_VARS" ]; then
+            # Source environment variables, build the frontend, and start the server.
+            . $GENERATED_VARS
+        else 
+              printf "In %s, %s is not available, therefore I could not source" "web:commands:start" "${GENERATED_VARS}"
+        fi
         # Gatsby clean on a RO-filesystem
         rm -rf .cache/* && rm -rf public/*
         npm run build -- --no-color
@@ -32,8 +37,15 @@ web:
         start: |
             # npm run serve -- -p $PORT --no-color
 
+            if [ -f "$GENERATED_VARS" ]; then
+                # Source environment variables, build the frontend, and start the server.
+                . $GENERATED_VARS            
+            else 
+              printf "In %s, %s is not available, therefore I could not source" "web:commands:start" "${GENERATED_VARS}"
+            fi
             APP=$(cat package.json | jq -r '.name')
             pm2 start npm --no-daemon --watch --name $APP -- run serve -- -p $PORT --no-color
+            #pm2 start npm --no-daemon --watch --name $APP -- run develop -- -p $PORT --no-color
 
 
 

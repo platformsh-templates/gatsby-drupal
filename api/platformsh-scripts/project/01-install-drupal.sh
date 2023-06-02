@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 ########################################################################################################################
 # NOTE:
-# 
+#
 # This script installs Drupal with default settings. An initial admin user is created, using the slug id from the
 #   project's first commit, pulled from the environment.
 #
 ########################################################################################################################
-printf "    ✔ Installing Drupal with a Standard profile (see https://next-drupal.org/learn/quick-start/install-drupal).\n"
+printf "    ✔ Installing Drupal with a Standard profile.\n"
 
-# 1. Define initial admin password. 
+# 1. Define initial admin password.
 INIT_ADMIN_PASS=${PLATFORM_PROJECT_ENTROPY}
 
 # 2. Install the site.
